@@ -23,6 +23,7 @@ import {
 import Link from "next/link"
 import { AnimatePresence } from "framer-motion"
 import SplashCursor from "../components/SplashCursor";
+import { link } from "fs"
 
 // Register GSAP plugins
 if (typeof window !== "undefined") {
@@ -501,7 +502,7 @@ export default function Portfolio() {
             >
               <div className="w-[400px] h-[520px] mx-auto bg-gradient-to-br from-purple-600 to-blue-600 rounded-[2.5rem] flex items-center justify-center">
                 <div className="w-[380px] h-[500px] bg-black rounded-[2.5rem] flex items-center justify-center overflow-hidden">
-                  <img src="/me.jpeg" alt="John Doe" className="w-[380px] h-[500px] object-cover rounded-[2.5rem]" />
+                  <img src="/me3.jpeg" alt="John Doe" className="w-[380px] h-[500px] object-cover rounded-[2.5rem]" />
                 </div>
               </div>
             </motion.div>
@@ -700,31 +701,37 @@ export default function Portfolio() {
                 title: "Oxford College",
                 tech: "Laravel , ClickPay , MySQL",
                 image: "/oxford.jpeg",
+                link: "https://oxford-cis.com/",
               },
               {
                 title: "Viedma Platform",
                 tech: "Laravel , ClickPay , MySQL",
                 image: "/viedma.jpeg",
+                link: "https://viedma.ai/",
               },
               {
-                title: "Alshboul",
+                title: "Alshboul Law App",
                 tech: "Laravel , LiveWire , MySQL",
                 image: "/alshboul.jpeg",
+                link: "https://alshboul.metafortech.com/",
               },
               {
                 title: "Shop&More",
                 tech: "Laravel , VueJs , MySQL , Stripe",
                 image: "/shop.jpeg",
+                link: "https://shopandmoresa.com/",
               },
               {
                 title: "jameiatech",
                 tech: "Laravel , VueJs , MySQL , Stripe",
                 image: "/jameia.jpeg",
+                link: "https://jameiatech.com/",
               },
               {
                 title: "NONE",
                 tech: "NONE",
                 image: "/pplaceHolder.jpg",
+                link: "https://example.com/",
               },
             ].map((project, index) => (
               <ProjectCard key={project.title} project={project} index={index} />
@@ -732,66 +739,6 @@ export default function Portfolio() {
           </div>
         </div>
       </section>
-
-      {/* Testimonials Section
-      <section id="testimonials" className="pt-32 pb-32 px-4 md:px-8 lg:px-16 relative overflow-hidden">
-        <div className="absolute inset-0 z-0 zebra-bg pointer-events-none"></div>
-        <div className="max-w-6xl mx-auto relative z-10">
-          <motion.h2
-            className="text-5xl md:text-7xl font-black tracking-tighter mb-16 text-center"
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            TESTIMONIALS
-          </motion.h2>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                name: "Sarah Johnson",
-                role: "CEO, TechStart",
-                text: "John delivered an exceptional website that exceeded our expectations. His attention to detail and creative vision is unmatched.",
-                rating: 5,
-              },
-              {
-                name: "Mike Chen",
-                role: "Founder, DesignCo",
-                text: "Working with John was a game-changer for our business. The mobile app he built increased our user engagement by 300%.",
-                rating: 5,
-              },
-              {
-                name: "Emily Davis",
-                role: "Marketing Director",
-                text: "Professional, creative, and reliable. John transformed our brand identity and created a stunning e-commerce platform.",
-                rating: 5,
-              },
-            ].map((testimonial, index) => (
-              <motion.div
-                key={testimonial.name}
-                className="bg-black p-8 rounded-lg border border-gray-800 hover:border-purple-500 transition-colors hover-lift cursor-pointer"
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -8, scale: 1.03 }}
-              >
-                <div className="flex mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} size={20} className="text-yellow-400 fill-current" />
-                  ))}
-                </div>
-                <p className="text-gray-300 mb-6 leading-relaxed">"{testimonial.text}"</p>
-                <div>
-                  <h4 className="font-bold text-white">{testimonial.name}</h4>
-                  <p className="text-gray-400 text-sm">{testimonial.role}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section> */}
 
       {/* Contact Section with Purple Background and White Dots */}
       <section id="contact" className="pt-32 pb-48 px-4 md:px-8 lg:px-16 bg-black relative overflow-hidden">
@@ -1055,7 +1002,13 @@ function TabContent({ skillTab }: { skillTab: number }) {
   );
 }
 
-function ProjectCard({ project, index }: { project: { title: string; tech: string; image: string }, index: number }) {
+function ProjectCard({
+  project,
+  index,
+}: {
+  project: { title: string; tech: string; image: string; link: string };
+  index: number;
+}) {
   const cardRef = useRef<HTMLDivElement>(null);
   const [tilt, setTilt] = useState({ x: 0, y: 0 });
 
@@ -1067,7 +1020,6 @@ function ProjectCard({ project, index }: { project: { title: string; tech: strin
     const y = e.clientY - rect.top;
     const centerX = rect.width / 2;
     const centerY = rect.height / 2;
-    // Max tilt angle
     const maxTilt = 15;
     const tiltX = ((y - centerY) / centerY) * maxTilt;
     const tiltY = ((x - centerX) / centerX) * maxTilt;
@@ -1088,7 +1040,7 @@ function ProjectCard({ project, index }: { project: { title: string; tech: strin
       viewport={{ once: true }}
       style={{
         transform: `perspective(900px) rotateX(${tilt.x}deg) rotateY(${tilt.y}deg) scale(1)`,
-        willChange: 'transform',
+        willChange: "transform",
       }}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
@@ -1099,14 +1051,24 @@ function ProjectCard({ project, index }: { project: { title: string; tech: strin
             src={project.image || "/placeholder.svg"}
             alt={project.title}
             className="w-full h-full object-cover object-center"
-            style={{ aspectRatio: '1/1' }}
+            style={{ aspectRatio: "1/1" }}
           />
         </div>
       </div>
       <div className="flex-1 flex flex-col items-center text-center w-full mt-8">
-        <h3 className="text-xl font-extrabold tracking-tight mb-2 text-white drop-shadow-lg leading-tight min-h-[56px] flex items-center justify-center">{project.title}</h3>
+        <h3 className="text-xl font-extrabold tracking-tight mb-2 text-white drop-shadow-lg leading-tight min-h-[56px] flex items-center justify-center">
+          {project.title}
+        </h3>
         <p className="text-gray-300 text-base mb-6 font-mono">{project.tech}</p>
-        <button className="w-full mt-auto px-0 py-3 rounded-xl bg-gradient-to-r from-purple-500 to-blue-500 text-white font-bold text-base shadow-md hover:from-purple-600 hover:to-blue-600 transition-colors focus:outline-none focus:ring-2 focus:ring-purple-400 active:scale-95">View Project</button>
+        {/* غيرنا الزرار لـ رابط */}
+        <a
+          href={project.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-full mt-auto px-0 py-3 rounded-xl bg-gradient-to-r from-purple-500 to-blue-500 text-white font-bold text-base shadow-md hover:from-purple-600 hover:to-blue-600 transition-colors focus:outline-none focus:ring-2 focus:ring-purple-400 active:scale-95 text-center"
+        >
+          View Project
+        </a>
       </div>
     </motion.div>
   );
