@@ -446,7 +446,7 @@ export default function Portfolio() {
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div className="about-text">
               <p className="text-xl md:text-2xl leading-relaxed text-gray-300 mb-8">
-                I'm a PHP Backend Developer specializing in Laravel and Livewire,
+                I'm a PHP Backend Developer Specializing in Laravel and Livewire,
                 focused on building scalable, secure, and maintainable web applications.
               </p>
               <p className="text-lg leading-relaxed text-gray-400 mb-8">
