@@ -365,32 +365,92 @@ export default function Portfolio() {
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,rgba(120,119,198,0.15),transparent_50%)]"></div>
         </motion.div>
 
-        <motion.div className="relative z-10 text-center px-4" style={{ y: textY }}>
+        <motion.div
+          className="relative z-10 text-center px-4 sm:px-6"
+          style={{ y: textY }}
+        >
           <motion.h1
-            className="hero-title text-6xl md:text-8xl lg:text-9xl font-black tracking-tighter mb-6"
+            className="
+      hero-title
+      text-4xl
+      sm:text-6xl
+      md:text-7xl
+      lg:text-9xl
+      font-black
+      tracking-tight
+      leading-tight
+      mb-4
+      sm:mb-6
+    "
             initial={{ opacity: 0, y: 60 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, ease: 'easeOut' }}
           >
-            <span className="shiny-text">Mohamed</span>
-            <br />
-            <span className="shiny-text">Maher</span>
+            <span className="shiny-text block">Mohamed</span>
+            <span className="shiny-text block">Maher</span>
           </motion.h1>
-          <p className="hero-subtitle text-xl md:text-2xl font-bold tracking-wide text-gray-300 mb-8">
+
+          <p
+            className="
+      hero-subtitle
+      text-sm
+      sm:text-lg
+      md:text-xl
+      font-semibold
+      tracking-wide
+      text-gray-300
+      mb-6
+      sm:mb-8
+      px-2
+    "
+          >
             PHP Backend & Full-Stack Developer (Laravel & Livewire)
           </p>
-          <div className="flex gap-6 justify-center">
+
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center">
             <motion.a
               href="#projects"
-              className="px-8 py-4 bg-white text-black font-bold text-lg tracking-wide hover:bg-gray-200 transition-colors"
+              className="
+        w-full
+        sm:w-auto
+        px-8
+        py-3
+        sm:py-4
+        bg-white
+        text-black
+        font-bold
+        text-base
+        sm:text-lg
+        tracking-wide
+        hover:bg-gray-200
+        transition-colors
+      "
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
               VIEW WORK
             </motion.a>
+
             <Link href="/contact">
               <motion.div
-                className="px-8 py-4 border-2 border-white text-white font-bold text-lg tracking-wide hover:bg-white hover:text-black transition-colors cursor-pointer"
+                className="
+          w-full
+          sm:w-auto
+          px-8
+          py-3
+          sm:py-4
+          border-2
+          border-white
+          text-white
+          font-bold
+          text-base
+          sm:text-lg
+          tracking-wide
+          hover:bg-white
+          hover:text-black
+          transition-colors
+          cursor-pointer
+        "
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -399,6 +459,7 @@ export default function Portfolio() {
             </Link>
           </div>
         </motion.div>
+
 
         {/* Floating Elements */}
         <div className="floating-element absolute top-20 left-20 w-4 h-4 bg-purple-500 rounded-full"></div>
