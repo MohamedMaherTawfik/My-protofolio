@@ -789,10 +789,10 @@ export default function Portfolio() {
                 link: "https://jameiatech.com/",
               },
               {
-                title: "NONE",
-                tech: "NONE",
-                image: "/pplaceHolder.jpg",
-                link: "https://example.com/",
+                title: "Retreval Augmented Generational",
+                tech: "Node js websocket & Laravel api's",
+                image: "/rag.jpeg",
+                link: "https://github.com/MohamedMaherTawfik/Rag-system-with-web-socket",
               },
             ].map((project, index) => (
               <ProjectCard key={project.title} project={project} index={index} />
