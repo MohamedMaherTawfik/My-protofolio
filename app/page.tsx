@@ -952,9 +952,9 @@ function TabContent({ skillTab }: { skillTab: number }) {
               title: "FRONTEND",
               skills: [
                 "Blade",
-                "Tailwind CSS",
-                "Bootstrap",
-                "JavaScript"
+                "LiveWire",
+                "JavaScript",
+                "Vue js",
               ],
             }
             ,
