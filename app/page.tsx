@@ -301,21 +301,30 @@ export default function Portfolio() {
       {/* Glassmorphism Header */}
       <header
         ref={headerRef}
-        className={`fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[90vw] max-w-5xl rounded-3xl bg-white/10 backdrop-blur-md shadow-lg flex items-center justify-between px-8 py-4 transition-transform duration-500 ${showHeader ? 'translate-y-0 opacity-100' : '-translate-y-32 opacity-0 pointer-events-none'}`}
+        className={`fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[90vw] max-w-5xl rounded-3xl bg-white/10 backdrop-blur-md shadow-lg flex flex-col md:flex-row items-center justify-between px-4 md:px-8 py-3 md:py-4 transition-transform duration-500
+    ${showHeader ? 'translate-y-0 opacity-100' : '-translate-y-32 opacity-0 pointer-events-none'}`}
         onMouseEnter={() => setShowHeader(true)}
       >
-        <div className="flex items-center gap-3">
-          <img src="/me2.jpeg" alt="Logo" className="w-10 h-10 rounded-2xl object-cover" />
-          <span className="font-black text-2xl tracking-tight text-white/90">My Profile</span>
+        {/* Logo + Name */}
+        <div className="flex items-center gap-2 md:gap-3 mb-3 md:mb-0">
+          <img
+            src="/me2.jpeg"
+            alt="Logo"
+            className="w-8 h-8 md:w-10 md:h-10 rounded-2xl object-cover"
+          />
+          <span className="font-black text-lg md:text-2xl tracking-tight text-white/90">My Profile</span>
         </div>
-        <nav className="flex gap-6">
-          <a href="#about" className="text-white/80 font-semibold hover:text-white transition-colors px-3 py-1 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400">About</a>
-          <a href="#skills" className="text-white/80 font-semibold hover:text-white transition-colors px-3 py-1 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400">Skills</a>
-          <a href="#projects" className="text-white/80 font-semibold hover:text-white transition-colors px-3 py-1 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400">Projects</a>
-          {/* <a href="#testimonials" className="text-white/80 font-semibold hover:text-white transition-colors px-3 py-1 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400">Testimonials</a> */}
-          <a href="#contact" className="text-white/80 font-semibold hover:text-white transition-colors px-3 py-1 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400">Contact</a>
+
+        {/* Navigation */}
+        <nav className="flex flex-wrap justify-center gap-3 md:gap-6">
+          <a href="#about" className="text-white/80 font-semibold hover:text-white transition-colors px-2 md:px-3 py-1 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400">About</a>
+          <a href="#skills" className="text-white/80 font-semibold hover:text-white transition-colors px-2 md:px-3 py-1 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400">Skills</a>
+          <a href="#projects" className="text-white/80 font-semibold hover:text-white transition-colors px-2 md:px-3 py-1 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400">Projects</a>
+          <a href="#contact" className="text-white/80 font-semibold hover:text-white transition-colors px-2 md:px-3 py-1 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400">Contact</a>
         </nav>
       </header>
+
+
       {/* Hero Section with Parallax */}
       <section
         ref={heroRef}
@@ -541,7 +550,7 @@ export default function Portfolio() {
 
               </div>
               <a
-                href="cv.pdf"
+                href="MohamedMaherTawfik_CV.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 text-white font-bold shadow-md hover:from-purple-600 hover:to-blue-600 transition-colors text-lg mt-2"
@@ -563,7 +572,7 @@ export default function Portfolio() {
             >
               <div className="w-[400px] h-[520px] mx-auto bg-gradient-to-br from-purple-600 to-blue-600 rounded-[2.5rem] flex items-center justify-center">
                 <div className="w-[380px] h-[500px] bg-black rounded-[2.5rem] flex items-center justify-center overflow-hidden">
-                  <img src="/me3.jpeg" alt="John Doe" className="w-[380px] h-[500px] object-cover rounded-[2.5rem]" />
+                  {/* <img src="/me3.jpeg" alt="John Doe" className="w-[380px] h-[500px] object-cover rounded-[2.5rem]" /> */}
                 </div>
               </div>
             </motion.div>
