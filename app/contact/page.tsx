@@ -19,21 +19,40 @@ export default function ContactPage() {
   const [isSubmitted, setIsSubmitted] = useState(false)
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSubmitting(true)
+    e.preventDefault();
+    setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 2000))
+    try {
+      const form = new FormData();
+      form.append("name", formData.name);
+      form.append("email", formData.email);
+      form.append("subject", formData.subject);
+      form.append("message", formData.message);
 
-    setIsSubmitting(false)
-    setIsSubmitted(true)
+      // استبدل الرابط ده بالرابط اللي نسخته من الـ Deploy
+      const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycby2h3_EK_SI8QO1kkAlAGDTHU3pByUEohu_jIJ78ZGuESX8YRwvvwXYvlR7myiQnValDQ/exec";
 
-    // Reset form after 3 seconds
-    setTimeout(() => {
-      setIsSubmitted(false)
-      setFormData({ name: "", email: "", subject: "", message: "" })
-    }, 3000)
-  }
+      const response = await fetch(GOOGLE_SCRIPT_URL, {
+        method: "POST",
+        body: form,           // FormData مباشرة
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setIsSubmitted(true);
+        setFormData({ name: "", email: "", subject: "", message: "" });
+      } else {
+        alert("Error: " + (result.error || "Something went wrong!"));
+      }
+    } catch (err) {
+      console.error(err);
+      alert("Error sending message ❌ Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
@@ -47,7 +66,7 @@ export default function ContactPage() {
       {/* Animated Background Dots */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
         {[...Array(20)].map((_, i) => (
-          <motion.div
+          <motion.div suppressHydrationWarning
             key={i}
             className="absolute w-1 h-1 bg-white rounded-full opacity-30"
             style={{
@@ -72,7 +91,7 @@ export default function ContactPage() {
         {/* Header */}
         <header className="p-8">
           <Link href="/">
-            <motion.div
+            <motion.div suppressHydrationWarning
               className="flex items-center gap-2 text-white hover:text-purple-300 transition-colors cursor-pointer"
               whileHover={{ x: -5 }}
             >
@@ -103,7 +122,7 @@ export default function ContactPage() {
 
           <div className="grid lg:grid-cols-2 gap-16">
             {/* Contact Information */}
-            <motion.div
+            <motion.div suppressHydrationWarning
               className="space-y-8"
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
@@ -118,7 +137,7 @@ export default function ContactPage() {
               </div>
 
               <div className="space-y-6">
-                <motion.div
+                <motion.div suppressHydrationWarning
                   className="flex items-center gap-4 p-4 bg-black/30 rounded-lg backdrop-blur-sm"
                   whileHover={{ scale: 1.02 }}
                 >
@@ -129,7 +148,7 @@ export default function ContactPage() {
                   </div>
                 </motion.div>
 
-                <motion.div
+                <motion.div suppressHydrationWarning
                   className="flex items-center gap-4 p-4 bg-black/30 rounded-lg backdrop-blur-sm"
                   whileHover={{ scale: 1.02 }}
                 >
@@ -140,7 +159,7 @@ export default function ContactPage() {
                   </div>
                 </motion.div>
 
-                <motion.div
+                <motion.div suppressHydrationWarning
                   className="flex items-center gap-4 p-4 bg-black/30 rounded-lg backdrop-blur-sm"
                   whileHover={{ scale: 1.02 }}
                 >
@@ -182,14 +201,14 @@ export default function ContactPage() {
             </motion.div>
 
             {/* Contact Form */}
-            <motion.div
+            <motion.div suppressHydrationWarning
               className="bg-black/30 backdrop-blur-sm rounded-2xl p-8"
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
               {isSubmitted ? (
-                <motion.div
+                <motion.div suppressHydrationWarning
                   className="text-center py-16"
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}

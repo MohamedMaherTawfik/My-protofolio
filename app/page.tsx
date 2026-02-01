@@ -547,7 +547,6 @@ export default function Portfolio() {
                 >
                   <Mail size={32} />
                 </motion.a>
-
               </div>
               <a
                 href="MohamedMaherTawfik_CV.pdf"
