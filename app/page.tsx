@@ -571,7 +571,7 @@ export default function Portfolio() {
             >
               <div className="w-[400px] h-[520px] mx-auto bg-gradient-to-br from-purple-600 to-blue-600 rounded-[2.5rem] flex items-center justify-center">
                 <div className="w-[380px] h-[500px] bg-black rounded-[2.5rem] flex items-center justify-center overflow-hidden">
-                  {/* <img src="/me3.jpeg" alt="John Doe" className="w-[380px] h-[500px] object-cover rounded-[2.5rem]" /> */}
+                  {/* <img src="/me3.jpeg" alt="Mohamed Maher" className="w-[380px] h-[500px] object-cover rounded-[2.5rem]" /> */}
                 </div>
               </div>
             </motion.div>
