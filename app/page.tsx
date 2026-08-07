@@ -8,6 +8,7 @@ import {
   Github,
   Linkedin,
   Mail,
+  Phone,
   ExternalLink,
   Code,
   Palette,
@@ -17,6 +18,8 @@ import {
   Award,
   Users,
   Calendar,
+  Database,
+  ShieldCheck,
   ArrowRight,
   ArrowLeft,
 } from "lucide-react"
@@ -72,16 +75,16 @@ export default function Portfolio() {
   // Animated left-side scrolling texts
   const leftMessages = [
     "Hi, welcome to my profile.",
-    "I'm a ctrl C + ctrl V engineer",
-    "Enjoy your stay!",
-    "Let's build something cool.",
+    "Backend Developer | Laravel & Node.js",
+    "1+ year building production apps.",
+    "Let's build something scalable.",
     "I debug by yelling at my screen.",
     "Professional coffee drinker.",
     "I turn caffeine into code.",
     "My code works... on my machine.",
-    "I write bugs, then fix them for a living.",
+    "Owning APIs, payments & AI, end to end.",
     "Stack Overflow is my best friend.",
-    "I can explain it to you, but I can't understand it for you.",
+    "10,000+ users trust the platforms I build.",
     "I use dark mode even in daylight.",
     "I break things just to fix them.",
     "I'm not lazy, I'm on energy-saving mode.",
@@ -270,28 +273,28 @@ export default function Portfolio() {
     {
       title: "EXPERIENCE",
       stats: [
-        { icon: Calendar, number: "1+", label: "YEARS EXPERIENCE" },
-        { icon: Code, number: "5+", label: "PROJECTS COMPLETED" },
-        { icon: Users, number: "5+", label: "HAPPY CLIENTS" },
-        { icon: Award, number: "3+", label: "AWARDS WON" },
+        { icon: Calendar, number: "2+", label: "YEARS EXPERIENCE" },
+        { icon: Code, number: "5+", label: "LIVE PRODUCTION APPS" },
+        { icon: Users, number: "10K+", label: "USERS SERVED (AI PRO)" },
+        { icon: Award, number: "2", label: "COMPANIES WORKED WITH" },
       ],
     },
     {
       title: "EDUCATION",
       stats: [
         { icon: Calendar, number: "2025", label: "GRADUATED" },
-        { icon: Code, number: "BSc", label: "COMPUTER SCIENCE" },
-        { icon: Users, number: "3.8", label: "GPA" },
-        { icon: Award, number: "2", label: "HONORS" },
+        { icon: Code, number: "B.Eng.", label: "COMPUTER & INFO SCIENCES" },
+        { icon: Users, number: "Mansoura", label: "UNIVERSITY" },
+        { icon: Award, number: "Faculty of CIS", label: "DEPARTMENT" },
       ],
     },
     {
-      title: "CERTIFICATION",
+      title: "LANGUAGES",
       stats: [
-        { icon: Award, number: "5+", label: "CERTIFICATES" },
-        { icon: Code, number: "3", label: "ONLINE COURSES" },
-        { icon: Users, number: "2", label: "BOOTCAMPS" },
-        { icon: Calendar, number: "2025", label: "LAST UPDATED" },
+        { icon: Globe, number: "Arabic", label: "NATIVE" },
+        { icon: Award, number: "English", label: "CONVERSATIONAL" },
+        { icon: Code, number: "Strong", label: "WRITTEN COMMUNICATION" },
+        { icon: Users, number: "Remote", label: "& GCC HOURS READY" },
       ],
     },
   ];
@@ -312,7 +315,7 @@ export default function Portfolio() {
             alt="Logo"
             className="w-8 h-8 md:w-10 md:h-10 rounded-2xl object-cover"
           />
-          <span className="font-black text-lg md:text-2xl tracking-tight text-white/90">My Profile</span>
+          <span className="font-black text-lg md:text-2xl tracking-tight text-white/90">Mohamed Maher</span>
         </div>
 
         {/* Navigation */}
@@ -408,12 +411,27 @@ export default function Portfolio() {
       font-semibold
       tracking-wide
       text-gray-300
+      mb-2
+      px-2
+    "
+          >
+            Full-Stack Developer | Laravel, Vue.js, Node.js(Express.JS || Nest.js) &amp; AI Integrations
+          </p>
+          <p
+            className="
+      hero-subtitle
+      text-xs
+      sm:text-sm
+      md:text-base
+      font-medium
+      tracking-wide
+      text-gray-400
       mb-6
       sm:mb-8
       px-2
     "
           >
-            PHP Backend & Full-Stack Developer (Laravel & Livewire)
+            Mansoura / Cairo, Egypt · Available for Remote Work &amp; GCC Hours
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center">
@@ -517,13 +535,24 @@ export default function Portfolio() {
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div className="about-text">
               <p className="text-xl md:text-2xl leading-relaxed text-gray-300 mb-8">
-                I'm a PHP Backend Developer Specializing in Laravel and Livewire,
-                focused on building scalable, secure, and maintainable web applications.
+                Full-Stack Developer with professional experience building and maintaining
+                production web applications across AI, e-commerce, education, and healthcare.
               </p>
               <p className="text-lg leading-relaxed text-gray-400 mb-8">
-                I enjoy designing clean architectures, developing RESTful APIs,
-                and implementing efficient backend solutions that power real-world products.
+                Hands-on experience with Laravel, Node.js, Express.js, NestJS, REST APIs,
+                Vue.js, MySQL, Redis, Docker, payment gateways, RAG, Qdrant, PHPUnit,
+                and Linux deployment. Proven ability to own end-to-end delivery in small teams
+                and collaborate remotely through pull requests and senior code review.
+
               </p>
+              <div className="flex flex-col gap-3 mb-8 text-gray-300">
+                <a href="mailto:m7mdellham77@gmail.com" className="flex items-center gap-3 hover:text-white transition-colors">
+                  <Mail size={20} className="text-purple-400" /> m7mdellham77@gmail.com
+                </a>
+                <a href="tel:+201024328382" className="flex items-center gap-3 hover:text-white transition-colors">
+                  <Phone size={20} className="text-purple-400" /> +20 102 432 8382
+                </a>
+              </div>
               <div className="flex gap-6 mb-8">
                 <motion.a
                   href="https://github.com/MohamedMaherTawfik" target="_blank"
@@ -605,7 +634,7 @@ export default function Portfolio() {
                 <div className="mb-4">
                   <stat.icon size={48} className="mx-auto text-white" />
                 </div>
-                <h3 className="text-4xl font-black text-white mb-2">{stat.number}</h3>
+                <h3 className="text-3xl md:text-4xl font-black text-white mb-2">{stat.number}</h3>
                 <p className="text-white font-bold tracking-wide">{stat.label}</p>
               </motion.div>
             ))}
@@ -698,28 +727,28 @@ export default function Portfolio() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                title: "WEB DEVELOPMENT",
-                description: "Custom websites and web applications built with modern technologies, responsive designs, and optimized performance for a seamless user experience.",
+                title: "FULL-STACK DEVELOPMENT",
+                description: "End-to-end web applications using Laravel, Node.js, Express.js, NestJS, Vue.js, and REST APIs, with responsive interfaces and seamless frontend-backend integration.",
               },
               {
-                title: "Educational Platform",
-                description: "Interactive and user-friendly platforms for online learning and course management.",
+                title: "AI INTEGRATIONS",
+                description: "RAG memory with Qdrant, OpenRouter-powered AI tools, background jobs, and SSE streaming for responsive AI product experiences.",
               },
               {
-                title: "E-Commerce Systems",
-                description: "Complete online stores with secure payment integration, inventory management, user-friendly checkout, and scalable solutions for growing businesses.",
+                title: "E-COMMERCE & PAYMENTS",
+                description: "Secure payment workflows with PayPal, Stripe, Moyasar, and ClickPay, including webhook-driven order processing and idempotent wallet logic.",
               },
               {
-                title: "Lawyers' Platform",
-                description: "Efficient legal management systems for lawyers, including case tracking and client management.",
+                title: "EDUCATION PLATFORMS",
+                description: "Role-based dashboards, courses, quizzes, enrollment, progress tracking, and Zoom/n8n integrations for e-learning and school platforms.",
               },
               {
-                title: "Dashboards",
-                description: "Customizable dashboards that visualize data clearly for business insights and decision-making.",
+                title: "PERFORMANCE & TESTING",
+                description: "MySQL and Redis performance tuning, database indexing, caching, and PHPUnit feature/integration test coverage.",
               },
               {
-                title: "CONSULTING",
-                description: "Technical consulting, code reviews, and architecture optimization to improve your projects’ efficiency, scalability, and maintainability.",
+                title: "DEPLOYMENT & DEVOPS",
+                description: "Docker-based deployment on Ubuntu Linux with Nginx or Apache, including VPS configuration, SSL, domains, and production deployments.",
               },
             ].map((service, index) => (
               <motion.div
@@ -765,42 +794,41 @@ export default function Portfolio() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-
               {
-                title: "Oxford College",
-                tech: "Laravel , ClickPay , MySQL",
-                image: "/oxford.jpeg",
-                link: "https://oxford-cis.com/",
+                title: "AI Pro",
+                tech: "Laravel, FastAPI, Qdrant, RAG, Redis",
+                image: "/aipro.png",
+                link: "https://pro.aiarabic.com/ar",
+              },
+              {
+                title: "SceMory",
+                tech: "Laravel, Vue.js, OpenRouter, PayPal",
+                image: "/scemory.png",
+                link: "https://dev.scemory.com/en/home",
+              },
+              {
+                title: "WellXa",
+                tech: "Laravel, MySQL, PHPUnit",
+                image: "/wellxa.png",
+                link: "https://wellxa.ae/",
               },
               {
                 title: "Viedma Platform",
-                tech: "Laravel , ClickPay , MySQL",
+                tech: "Laravel, ClickPay, Zoom SDK, MySQL",
                 image: "/viedma.jpeg",
                 link: "https://viedma.ai/",
               },
               {
+                title: "Oxford College",
+                tech: "Laravel, ClickPay, Zoom SDK, MySQL",
+                image: "/oxford.jpeg",
+                link: "https://oxford-cis.com/",
+              },
+              {
                 title: "Alshboul Law App",
-                tech: "Laravel , LiveWire , MySQL",
+                tech: "Laravel, Livewire, MySQL",
                 image: "/alshboul.jpeg",
-                link: "https://alshboul.metafortech.com/",
-              },
-              {
-                title: "Shop&More",
-                tech: "Laravel , VueJs , MySQL , Stripe",
-                image: "/shop.jpeg",
-                link: "https://shopandmoresa.com/",
-              },
-              {
-                title: "jameiatech",
-                tech: "Laravel , VueJs , MySQL , Stripe",
-                image: "/jameia.jpeg",
-                link: "https://jameiatech.com/",
-              },
-              {
-                title: "Retreval Augmented Generational",
-                tech: "Node js websocket & Laravel api's",
-                image: "/rag.jpeg",
-                link: "https://github.com/MohamedMaherTawfik/Rag-system-with-web-socket",
+                link: "https://github.com/MohamedMaherTawfik/alshboul",
               },
             ].map((project, index) => (
               <ProjectCard key={project.title} project={project} index={index} />
@@ -844,13 +872,23 @@ export default function Portfolio() {
           </motion.h2>
 
           <motion.p
-            className="text-xl md:text-2xl text-purple-100 mb-12 max-w-2xl mx-auto"
+            className="text-xl md:text-2xl text-purple-100 mb-4 max-w-2xl mx-auto"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
           >
             Ready to bring your ideas to life? Let's create something amazing together.
+          </motion.p>
+
+          <motion.p
+            className="text-base md:text-lg text-gray-400 mb-12"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+            viewport={{ once: true }}
+          >
+            m7mdellham77@gmail.com · +20 102 432 8382 · Mansoura / Cairo, Egypt
           </motion.p>
 
           <Link href="/contact">
@@ -875,7 +913,7 @@ export default function Portfolio() {
 // TabSwitcher component for beautiful tabs and animated indicator
 function TabSwitcher() {
   const [skillTab, setSkillTab] = useState(0);
-  const tabNames = ["Technical Skills", "Soft Skills", "Tools"];
+  const tabNames = ["Technical Skills", "AI & Integrations", "DevOps & Tools"];
   const tabRefs = [useRef<HTMLButtonElement>(null), useRef<HTMLButtonElement>(null), useRef<HTMLButtonElement>(null)];
   const indicatorRef = useRef<HTMLDivElement>(null);
   const [indicatorStyle, setIndicatorStyle] = useState({ left: 0, width: 0 });
@@ -939,43 +977,48 @@ function TabContent({ skillTab }: { skillTab: number }) {
               title: "BACKEND",
               skills: [
                 "PHP",
-                "OOP",
                 "Laravel",
-                "Livewire",
+                "Node.js (Express.js & Nest.js)",
+                "REST APIs",
+                "OOP / MVC / SOLID",
+                "Auth & RBAC",
               ],
             },
-            {
-              icon: Globe,
-              title: "BACKEND",
-              skills: [
-                "RESTful APIs",
-                "Clean Arch",
-                "SQL",
-                "MySQL"
-              ],
-            },
-
             {
               icon: Code,
               title: "FRONTEND",
               skills: [
-                "Blade",
-                "LiveWire",
+                "Vue.js",
                 "JavaScript",
-                "Vue js",
+                "HTML & CSS",
+                "Tailwind CSS",
+                "Bootstrap",
+                "Blade",
               ],
-            }
-            ,
+            },
             {
-              icon: Zap,
-              title: "DEPLOYMENT",
+              icon: Database,
+              title: "DATABASE",
               skills: [
-                "Deployment",
-                "Linux Basics",
-                "Git & GitHub",
-                "Shared & VPS Hosting"
+                "MySQL",
+                "Redis",
+                "Qdrant",
+                "Indexing",
+                "Query Optimization",
+                "Queues & Caching",
               ],
-            }
+            },
+            {
+              icon: ShieldCheck,
+              title: "TESTING",
+              skills: [
+                "PHPUnit",
+                "Feature Testing",
+                "Integration Testing",
+                "Database Testing",
+                "Mockery",
+              ],
+            },
 
           ].map((category, index) => (
             <motion.div
@@ -1008,26 +1051,32 @@ function TabContent({ skillTab }: { skillTab: number }) {
         </div>
       )}
       {skillTab === 1 && (
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+        <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-6 mb-8">
           {[
-            'Communication',
-            'Problem Solving',
-            'Teamwork',
-            'Adaptability',
-            'Creativity',
-            'Critical Thinking',
-            'Time Management',
-            'Leadership',
-          ].map((skill, index) => (
+            'OpenRouter',
+            'RAG',
+            'Qdrant',
+            'Google OAuth',
+            'PayPal',
+            'Moyasar',
+            'ClickPay',
+            'Stripe',
+            'Zoom',
+            'Webex',
+            'Firebase',
+            'Socket.IO',
+            'n8n',
+            'AWS',
+          ].map((tool, index) => (
             <motion.div
-              key={skill}
-              className="bg-black/80 border border-blue-600 rounded-2xl p-7 text-center text-white font-bold text-lg shadow-md transition-all duration-300 cursor-pointer hover:scale-[1.04] hover:-translate-y-2 hover:border-blue-400 hover:shadow-xl"
+              key={tool}
+              className="bg-black/80 border border-blue-600 rounded-2xl p-6 text-center text-white font-bold text-base shadow-md transition-all duration-300 cursor-pointer hover:scale-[1.04] hover:-translate-y-2 hover:border-blue-400 hover:shadow-xl"
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.05 }}
               viewport={{ once: true }}
             >
-              {skill}
+              {tool}
             </motion.div>
           ))}
         </div>
@@ -1035,24 +1084,17 @@ function TabContent({ skillTab }: { skillTab: number }) {
       {skillTab === 2 && (
         <div className="grid md:grid-cols-3 lg:grid-cols-6 gap-6 mb-8">
           {[
-            'v0.dev',
+            'Docker',
+            'Ubuntu Linux',
+            'Nginx',
+            'Apache',
+            'Hostinger',
+            'CWP',
+            'Namecheap',
+            'WHM',
             'Git',
             'GitHub',
-            'VS Code',
-            'Figma',
             'Postman',
-            'Notion',
-            'Vercel',
-            'Netlify',
-            'Supabase',
-            'Firebase',
-            'Trello',
-            'Slack',
-            'Jira',
-            'Discord',
-            'Photoshop',
-            'Illustrator',
-            'Canva',
           ].map((tool, index) => (
             <motion.div
               key={tool}
@@ -1129,14 +1171,13 @@ function ProjectCard({
           {project.title}
         </h3>
         <p className="text-gray-300 text-base mb-6 font-mono">{project.tech}</p>
-        {/* غيرنا الزرار لـ رابط */}
         <a
           href={project.link}
-          target="_blank"
+          target={project.link !== "#" ? "_blank" : undefined}
           rel="noopener noreferrer"
           className="w-full mt-auto px-0 py-3 rounded-xl bg-gradient-to-r from-purple-500 to-blue-500 text-white font-bold text-base shadow-md hover:from-purple-600 hover:to-blue-600 transition-colors focus:outline-none focus:ring-2 focus:ring-purple-400 active:scale-95 text-center"
         >
-          View Project
+          {project.link !== "#" ? "View Project" : "Private Project"}
         </a>
       </div>
     </motion.div>
